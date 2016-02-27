@@ -1,5 +1,6 @@
 package com.example.android.courtcounter;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState){
-        savedInstanceState.putInt("scoreTeamA",scoreTeamA);
-        savedInstanceState.putInt("scoreTeamB",scoreTeamB);
+        savedInstanceState.putInt("scoreTeamA", scoreTeamA);
+        savedInstanceState.putInt("scoreTeamB", scoreTeamB);
 
         super.onSaveInstanceState(savedInstanceState);
     }
@@ -79,5 +80,22 @@ public class MainActivity extends AppCompatActivity {
         scoreTeamB = 0;
         displayTeamAScore(scoreTeamA);
         displayTeamBScore(scoreTeamB);
+    }
+
+    public void showResults(View v){
+
+        String winTeamName;
+        if (scoreTeamA > scoreTeamB) {
+            winTeamName = "TEAM A";
+        }
+        else
+        {
+            winTeamName = "TEAM B";
+        }
+
+        Intent intent = new Intent(getApplicationContext(),WinnerActivity.class);
+        intent.putExtra("data",winTeamName);
+        startActivity(intent);
+
     }
 }

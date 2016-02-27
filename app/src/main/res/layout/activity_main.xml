@@ -151,14 +151,35 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonReset"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:background="#FF9800"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:textColor="#FFFFFF"
+        android:background="#4E4B4F"
         android:onClick="resetTeamScores"
         android:text="RESET" />
+
+    <Button
+        android:id="@+id/buttonResult"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp"
+        android:layout_margin="20dp"
+        android:textColor="#FFFFFF"
+        android:background="#4E4B4F"
+        android:onClick="showResults"
+        android:text="Result" />
+    </LinearLayout>
+
 </RelativeLayout>
